@@ -10,6 +10,10 @@ module.exports = (storybookBaseConfig) => {
           exclude: /node_modules/,
           loader: 'style!css?modules&importLoaders=2&sourceMap&localIdentName=[local]___[hash:base64:5]!autoprefixer!stylus?outputStyle=expanded&sourceMap'
         },
+        {
+          test: /\.css$/,
+          loader: 'style!css'
+        },
       ].concat(config.module.loaders.filter((item, index) => index !== 2))
     },
     resolve: config.resolve
